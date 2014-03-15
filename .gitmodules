@@ -1,3 +1,6 @@
 [submodule "pd/vendors/oss"]
 	path = pd/vendors/oss
 	url = https://github.com/outer-space-sounds/pd-library.git
+[submodule "pd/vendors/rjlib"]
+	path = pd/vendors/rjlib
+	url = https://github.com/rjdj/rjlib.git
