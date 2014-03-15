@@ -1,0 +1,3 @@
+[submodule "pd/vendors/oss"]
+	path = pd/vendors/oss
+	url = https://github.com/outer-space-sounds/pd-library.git
