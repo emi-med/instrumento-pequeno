@@ -1,7 +1,7 @@
 #N canvas 536 22 571 439 10;
 #X declare -path abstractions;
 #X declare -path ../vendors/oss;
-#N canvas 16 69 863 680 mikro-synth.gui 1;
+#N canvas 354 53 863 680 mikro-synth.gui 1;
 #X obj 9 12 declare -path abstractions;
 #X obj 9 34 declare -path ../vendors/oss;
 #X obj 10 602 mikro-synth.dsp;
@@ -11,11 +11,23 @@
 #X obj 304 198 cnv 15 330 60 empty empty Filtro 20 12 0 14 -233017
 -66577 0;
 #X obj 324 221 oss/slider 20 10000 3 10000 filtro freq;
+#X obj 304 263 cnv 15 330 100 empty empty Envolvente 20 12 0 14 -233017
+-66577 0;
+#X msg 79 91 64 64;
+#X msg 96 117 64 0;
+#X text 126 92 NoteON;
+#X text 132 115 NoteOff;
+#X obj 324 286 oss/slider 2 10000 3 2 envolvente attack;
+#X obj 325 322 oss/slider 2 10000 3 100 envolvente release;
 #X connect 2 0 5 0;
 #X connect 2 0 5 1;
 #X connect 3 0 4 0;
 #X connect 3 1 4 1;
 #X connect 4 0 2 0;
 #X connect 7 0 2 1;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 13 0 2 1;
+#X connect 14 0 2 1;
 #X coords 0 -1 1 1 533 400 2 300 10;
 #X restore 17 18 pd mikro-synth.gui;
