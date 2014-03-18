@@ -8,7 +8,7 @@
 #X obj 756 89 int;
 #X obj 756 66 clip 0 1;
 #X obj 756 112 s \$0-seventh;
-#X obj 848 718 table \$0-escala;
+#X obj 828 695 table \$0-escala;
 #X obj 953 576 f;
 #X obj 979 576 + 1;
 #X msg 953 492 0;

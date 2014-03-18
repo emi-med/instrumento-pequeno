@@ -2,7 +2,7 @@
 #X declare -path abstractions;
 #X declare -path ../vendors/oss;
 #X declare -path ../vendors/rjlib;
-#N canvas 402 22 875 733 mikro-synth.gui 0;
+#N canvas 4 22 1276 756 mikro-synth.gui 0;
 #X obj 9 12 declare -path abstractions;
 #X obj 9 34 declare -path ../vendors/oss;
 #X obj 10 602 mikro-synth.dsp;
@@ -36,13 +36,17 @@
 #X msg 199 631 66 64;
 #X msg 150 652 65 0;
 #X msg 214 653 66 0;
-#X obj 304 70 cnv 15 330 60 empty empty Armonizador 20 12 0 14 -233017
+#X obj 304 65 cnv 15 330 60 empty empty Armonizador 20 12 0 14 -233017
 -66577 0;
-#X obj 324 93 oss/slider 0 7 1 0 armonizador grado;
-#X obj 599 74 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
--1 0;
-#X text 545 73 Septimas;
+#X obj 324 88 oss/slider 0 7 1 0 armonizador grado;
+#X obj 599 69 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
+#X text 545 68 Septimas;
 #X msg 154 132 armonizador seventh \$1;
+#X obj 304 130 cnv 15 330 60 empty empty Arpegiador 20 12 0 14 -233017
+-66577 0;
+#X text 545 133;
+#X obj 324 153 oss/slider 0 2 1 0 arpegiador modo;
 #X connect 2 0 5 0;
 #X connect 2 0 5 1;
 #X connect 3 0 4 0;
@@ -68,5 +72,6 @@
 #X connect 29 0 2 2;
 #X connect 30 0 32 0;
 #X connect 32 0 2 2;
+#X connect 35 0 2 2;
 #X coords 0 -1 1 1 533 600 2 300 10;
 #X restore 17 18 pd mikro-synth.gui;
