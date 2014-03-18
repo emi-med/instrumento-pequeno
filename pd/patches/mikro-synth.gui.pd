@@ -2,37 +2,47 @@
 #X declare -path abstractions;
 #X declare -path ../vendors/oss;
 #X declare -path ../vendors/rjlib;
-#N canvas 400 22 875 733 mikro-synth.gui 1;
+#N canvas 402 22 875 733 mikro-synth.gui 0;
 #X obj 9 12 declare -path abstractions;
 #X obj 9 34 declare -path ../vendors/oss;
 #X obj 10 602 mikro-synth.dsp;
 #X obj 10 114 notein;
-#X obj 10 141 pack f f;
+#X obj 10 151 pack f f;
 #X obj 10 635 dac~;
-#X obj 304 233 cnv 15 330 60 empty empty Filtro 20 12 0 14 -233017
+#X obj 304 364 cnv 15 330 60 empty empty Filtro 20 12 0 14 -233017
 -66577 0;
-#X obj 324 256 oss/slider 20 10000 3 10000 filtro freq;
-#X obj 304 128 cnv 15 330 100 empty empty Envolvente 20 12 0 14 -233017
+#X obj 324 387 oss/slider 20 10000 3 10000 filtro freq;
+#X obj 304 259 cnv 15 330 100 empty empty Envolvente 20 12 0 14 -233017
 -66577 0;
-#X obj 324 151 oss/slider 2 10000 3 2 envolvente attack;
-#X obj 325 187 oss/slider 2 10000 3 100 envolvente release;
+#X obj 324 282 oss/slider 2 10000 3 2 envolvente attack;
+#X obj 325 318 oss/slider 2 10000 3 100 envolvente release;
 #X obj 9 56 declare -path ../vendors/rjlib;
-#X obj 304 63 cnv 15 330 60 empty empty Oscilador 20 12 0 14 -233017
+#X obj 304 194 cnv 15 330 60 empty empty Oscilador 20 12 0 14 -233017
 -66577 0;
-#X obj 324 86 oss/slider 0 4 1 0 oscilador waveform;
-#X msg 105 162 60 0;
-#X msg 91 141 60 64;
-#X obj 120 361 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 324 217 oss/slider 0 4 1 0 oscilador waveform;
+#X msg 125 702 60 0;
+#X msg 111 681 60 64;
+#X obj 340 631 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 120 416 60;
-#X obj 120 391 metro 1000;
-#X obj 304 298 cnv 15 330 100 empty empty Delay 20 12 0 14 -233017
+#X msg 340 686 60;
+#X obj 340 661 metro 1000;
+#X obj 304 429 cnv 15 330 100 empty empty Delay 20 12 0 14 -233017
 -66577 0;
-#X obj 324 321 oss/slider 0 7 1 4 delay duration;
-#X obj 325 357 oss/slider 0 1 1 0.5 delay mix;
-#X msg 154 141 63 64;
-#X msg 169 163 63 0;
-#X text 255 604 a;
+#X obj 324 452 oss/slider 0 7 1 4 delay duration;
+#X obj 325 488 oss/slider 0 1 1 0.5 delay mix;
+#X msg 174 681 63 64;
+#X msg 189 703 63 0;
+#X msg 136 631 65 64;
+#X msg 199 631 66 64;
+#X msg 150 652 65 0;
+#X msg 214 653 66 0;
+#X obj 304 70 cnv 15 330 60 empty empty Armonizador 20 12 0 14 -233017
+-66577 0;
+#X obj 324 93 oss/slider 0 7 1 0 armonizador grado;
+#X obj 599 74 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X text 545 73 Septimas;
+#X msg 154 132 armonizador seventh \$1;
 #X connect 2 0 5 0;
 #X connect 2 0 5 1;
 #X connect 3 0 4 0;
@@ -51,5 +61,12 @@
 #X connect 21 0 2 2;
 #X connect 22 0 2 0;
 #X connect 23 0 2 0;
-#X coords 0 -1 1 1 533 400 2 300 10;
+#X connect 24 0 2 0;
+#X connect 25 0 2 0;
+#X connect 26 0 2 0;
+#X connect 27 0 2 0;
+#X connect 29 0 2 2;
+#X connect 30 0 32 0;
+#X connect 32 0 2 2;
+#X coords 0 -1 1 1 533 600 2 300 10;
 #X restore 17 18 pd mikro-synth.gui;
