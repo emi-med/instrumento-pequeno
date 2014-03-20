@@ -2,7 +2,7 @@
 #X declare -path abstractions;
 #X declare -path ../vendors/oss;
 #X declare -path ../vendors/rjlib;
-#N canvas 0 0 667 670 mikro-synth.gui 1;
+#N canvas 463 19 667 670 mikro-synth.gui 1;
 #X obj 9 12 declare -path abstractions;
 #X obj 9 34 declare -path ../vendors/oss;
 #X obj 10 602 mikro-synth.dsp;
@@ -20,9 +20,8 @@
 #X obj 304 194 cnv 15 330 60 empty empty Oscilador 20 12 0 14 -233017
 -66577 0;
 #X obj 324 217 oss/slider 0 4 1 0 oscilador waveform;
-#X msg 125 702 60 0;
-#X msg 111 681 60 64;
-#X obj 340 631 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 94 678 60 64;
+#X obj 340 631 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 340 686 60;
 #X obj 340 661 metro 1000;
@@ -30,12 +29,9 @@
 -66577 0;
 #X obj 324 452 oss/slider 0 7 1 4 delay duration;
 #X obj 325 488 oss/slider 0 1 1 0.5 delay mix;
-#X msg 174 681 63 64;
-#X msg 189 703 63 0;
-#X msg 136 631 65 64;
-#X msg 199 631 66 64;
-#X msg 150 652 65 0;
-#X msg 214 653 66 0;
+#X msg 85 655 63 64;
+#X msg 50 678 65 64;
+#X msg 50 657 66 64;
 #X obj 304 65 cnv 15 330 60 empty empty Armonizador 20 12 0 14 -233017
 -66577 0;
 #X obj 324 88 oss/slider 0 7 1 0 armonizador grado;
@@ -53,6 +49,9 @@
 #X obj 551 665 print ppp;
 #X msg 489 625 0;
 #X msg 418 623 127 5000;
+#X msg 161 658 127 0;
+#X text 161 619 * cualquier nota con valor 0 apaga las demas. 127 =
+localhost :P;
 #X connect 2 0 5 0;
 #X connect 2 0 5 1;
 #X connect 3 0 4 0;
@@ -63,27 +62,24 @@
 #X connect 10 0 2 2;
 #X connect 13 0 2 2;
 #X connect 14 0 2 0;
-#X connect 15 0 2 0;
-#X connect 16 0 18 0;
-#X connect 17 0 2 1;
-#X connect 18 0 17 0;
+#X connect 15 0 17 0;
+#X connect 16 0 2 1;
+#X connect 17 0 16 0;
+#X connect 19 0 2 2;
 #X connect 20 0 2 2;
-#X connect 21 0 2 2;
+#X connect 21 0 2 0;
 #X connect 22 0 2 0;
 #X connect 23 0 2 0;
-#X connect 24 0 2 0;
-#X connect 25 0 2 0;
-#X connect 26 0 2 0;
-#X connect 27 0 2 0;
-#X connect 29 0 2 2;
-#X connect 30 0 32 0;
-#X connect 32 0 2 2;
-#X connect 35 0 2 2;
-#X connect 36 0 38 0;
-#X connect 37 0 36 0;
-#X connect 38 0 39 0;
+#X connect 25 0 2 2;
+#X connect 26 0 28 0;
+#X connect 28 0 2 2;
+#X connect 31 0 2 2;
+#X connect 32 0 34 0;
+#X connect 33 0 32 0;
+#X connect 34 0 35 0;
+#X connect 34 0 2 0;
+#X connect 36 0 33 0;
+#X connect 37 0 33 0;
 #X connect 38 0 2 0;
-#X connect 40 0 37 0;
-#X connect 41 0 37 0;
 #X coords 0 -1 1 1 533 600 2 300 10;
 #X restore 17 18 pd mikro-synth.gui;
