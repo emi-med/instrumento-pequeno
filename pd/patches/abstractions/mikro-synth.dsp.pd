@@ -24,7 +24,7 @@
 #X obj 126 214 voice~;
 #X obj 173 214 voice~;
 #X obj 35 110 route 1 2 3 4;
-#X obj 35 53 poly 4;
+#X obj 35 53 poly 4 1;
 #X connect 0 0 11 0;
 #X connect 1 0 4 1;
 #X connect 1 0 7 1;
@@ -59,8 +59,8 @@
 #X msg 489 344 0.7;
 #X obj 489 366 oss/normalize 0 1;
 #X msg 489 390 feedback \$1;
-#X obj 23 132 arpegiador;
-#X obj 102 112 r \$0-arpegiador;
+#X obj 24 136 arpegiador;
+#X obj 309 112 r \$0-arpegiador;
 #X obj 23 74 armonizador;
 #X obj 481 37 route filtro envolvente oscilador delay armonizador;
 #X obj 717 66 s \$0-armonizador;
