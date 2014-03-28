@@ -33,7 +33,7 @@
 -66577 0;
 #X obj 68 283 oss/slider 0 7 1 0 armonizador grado;
 #X obj 343 264 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X text 289 263 Septimas;
 #X msg 804 290 armonizador seventh \$1;
 #X obj 48 325 cnv 15 330 60 empty empty Arpegiador 20 12 0 14 -233017
@@ -98,7 +98,7 @@ DE LA PANTALLA!!!!!!!!!!!!!!;
 #X obj 94 235 hradio 15 1 1 2 empty empty empty 0 -8 0 10 -262144 -1
 -1 0;
 #X obj 278 237 hradio 15 1 1 2 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X text 66 234 Push;
 #X text 125 234 Toggle;
 #X text 242 236 Notas;
