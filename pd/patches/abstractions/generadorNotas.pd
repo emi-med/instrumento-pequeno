@@ -1,4 +1,4 @@
-#N canvas 58 48 1264 723 10;
+#N canvas 122 10 1264 723 10;
 #X obj 31 37 inlet boton;
 #X obj 556 355 inlet parametros;
 #X obj 317 645 outlet frecuencia;
