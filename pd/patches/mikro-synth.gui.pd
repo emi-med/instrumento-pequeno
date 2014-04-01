@@ -3,7 +3,7 @@
 #X declare -path ../vendors/oss;
 #X declare -path ../vendors/rjlib;
 #X declare -lib cyclone;
-#N canvas 64 3 801 700 mikro-synth.gui 1;
+#N canvas 0 0 667 670 mikro-synth.gui 0;
 #X obj 539 0 declare -path abstractions;
 #X obj 539 22 declare -path ../vendors/oss;
 #X obj 536 700 mikro-synth.dsp;
@@ -33,7 +33,7 @@
 -66577 0;
 #X obj 68 283 oss/slider 0 7 1 0 armonizador grado;
 #X obj 343 264 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 289 263 Septimas;
 #X msg 804 290 armonizador seventh \$1;
 #X obj 48 325 cnv 15 330 60 empty empty Arpegiador 20 12 0 14 -233017
@@ -57,7 +57,7 @@
 #X text 355 247 <-- Mouse en el rango del boton.;
 #X obj 270 282 spigot;
 #X text 117 150 Boton;
-#X obj 100 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 100 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 100 100 cnv 15 50 50 empty empty empty 20 12 0 14 -16662 -66577
 0;
