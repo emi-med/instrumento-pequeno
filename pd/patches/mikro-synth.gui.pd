@@ -1,41 +1,37 @@
-#N canvas 0 3 601 700 10;
+#N canvas 0 22 882 549 10;
 #X declare -path abstractions;
 #X declare -path ../vendors/oss;
 #X declare -path ../vendors/rjlib;
 #X declare -lib cyclone;
-#N canvas 64 3 801 700 mikro-synth.gui 1;
-#X obj 539 0 declare -path abstractions;
-#X obj 539 22 declare -path ../vendors/oss;
-#X obj 536 700 mikro-synth.dsp;
-#X obj 536 497 notein;
-#X obj 536 523 pack f f;
-#X obj 536 733 dac~;
-#X obj 48 559 cnv 15 330 60 empty empty Filtro 20 12 0 14 -233017 -66577
-0;
-#X obj 68 582 oss/slider 20 10000 3 10000 filtro freq;
-#X obj 48 454 cnv 15 330 100 empty empty Envolvente 20 12 0 14 -233017
+#N canvas 50 22 1071 756 mikro-synth.gui 1;
+#X obj 629 11 declare -path abstractions;
+#X obj 629 33 declare -path ../vendors/oss;
+#X obj 287 639 mikro-synth.dsp;
+#X obj 287 679 dac~;
+#X obj 382 241 cnv 15 330 60 empty empty Filtro 20 12 0 14 -233017
 -66577 0;
-#X obj 68 477 oss/slider 2 10000 3 2 envolvente attack;
-#X obj 69 513 oss/slider 2 10000 3 100 envolvente release;
-#X obj 539 44 declare -path ../vendors/rjlib;
+#X obj 402 264 oss/slider 20 10000 3 10000 filtro freq;
+#X obj 382 136 cnv 15 330 100 empty empty Envolvente 20 12 0 14 -233017
+-66577 0;
+#X obj 402 159 oss/slider 2 10000 3 2 envolvente attack;
+#X obj 403 195 oss/slider 2 10000 3 100 envolvente release;
+#X obj 629 55 declare -path ../vendors/rjlib;
 #X obj 48 389 cnv 15 330 60 empty empty Oscilador 20 12 0 14 -233017
 -66577 0;
 #X obj 68 412 oss/slider 0 4 1 0 oscilador waveform;
-#X obj 579 555 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 330 535 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 579 610 60;
-#X obj 579 585 metro 1000;
-#X obj 48 624 cnv 15 330 100 empty empty Delay 20 12 0 14 -233017 -66577
-0;
-#X obj 68 647 oss/slider 0 7 1 4 delay duration;
-#X obj 69 683 oss/slider 0 1 1 0.5 delay mix;
-#X obj 48 260 cnv 15 330 60 empty empty Armonizador 20 12 0 14 -233017
+#X obj 382 306 cnv 15 330 100 empty empty Delay 20 12 0 14 -233017
+-66577 0;
+#X obj 402 329 oss/slider 0 7 1 4 delay duration;
+#X obj 403 365 oss/slider 0 1 1 0.5 delay mix;
+#X obj 47 260 cnv 15 330 60 empty empty Armonizador 20 12 0 14 -233017
 -66577 0;
 #X obj 68 283 oss/slider 0 7 1 0 armonizador grado;
 #X obj 343 264 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
 #X text 289 263 Septimas;
-#X msg 804 290 armonizador seventh \$1;
+#X msg 1 542 armonizador seventh \$1;
 #X obj 48 325 cnv 15 330 60 empty empty Arpegiador 20 12 0 14 -233017
 -66577 0;
 #N canvas 441 160 596 385 boton 0;
@@ -57,7 +53,7 @@
 #X text 355 247 <-- Mouse en el rango del boton.;
 #X obj 270 282 spigot;
 #X text 117 150 Boton;
-#X obj 100 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 100 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 100 100 cnv 15 50 50 empty empty empty 20 12 0 14 -16662 -66577
 0;
@@ -89,52 +85,81 @@
 #X connect 18 0 0 0;
 #X coords 0 -1 1 1 50 65 2 100 100;
 #X restore 48 66 pd boton a;
-#X text 45 26 ESTA VENTANA TIENE QUE ESTAR EN LA POSICION ARIIBA< IZQUIERDA
+#X text 45 16 ESTA VENTANA TIENE QUE ESTAR EN LA POSICION ARIIBA< IZQUIERDA
 DE LA PANTALLA!!!!!!!!!!!!!!;
-#X text 106 82 No mueva esta caja!!!!!;
+#X text 47 51 No mueva esta caja!!!!!;
 #X text 1176 1329 0;
 #X obj 48 136 cnv 15 330 120 empty empty Generador_de_Notas 20 12 0
 14 -233017 -66577 0;
 #X obj 94 235 hradio 15 1 1 2 empty empty empty 0 -8 0 10 -262144 -1
 -1 0;
 #X obj 278 237 hradio 15 1 1 2 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 66 234 Push;
 #X text 125 234 Toggle;
 #X text 242 236 Notas;
 #X text 310 236 Frecuencia;
 #X obj 68 164 oss/slider 0 1 1 0.5 notas nota;
 #X obj 68 199 oss/slider 0 1 1 0.5 notas octava;
-#X msg 650 252 notas modo-boton \$1;
-#X msg 797 251 notas modo-notas \$1;
-#X obj 602 642 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 1 504 notas modo-boton \$1;
+#X msg 1 523 notas modo-notas \$1;
+#X obj 361 584 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 69 346 oss/slider 0 4 1 0 arpegiador modo;
-#X connect 2 0 5 0;
-#X connect 2 0 5 1;
-#X connect 3 0 4 0;
-#X connect 3 1 4 1;
-#X connect 4 0 2 0;
-#X connect 7 0 2 2;
-#X connect 9 0 2 2;
-#X connect 10 0 2 2;
-#X connect 13 0 2 2;
-#X connect 14 0 16 0;
-#X connect 15 0 2 1;
-#X connect 16 0 15 0;
-#X connect 16 0 41 0;
-#X connect 18 0 2 2;
-#X connect 19 0 2 2;
-#X connect 21 0 2 2;
-#X connect 22 0 24 0;
-#X connect 24 0 2 2;
-#X connect 26 0 2 0;
-#X connect 31 0 39 0;
-#X connect 32 0 40 0;
-#X connect 37 0 2 2;
-#X connect 38 0 2 2;
-#X connect 39 0 2 2;
+#X obj 1 571 s \$0-params;
+#X obj 374 607 r \$0-params;
+#X obj 381 410 s \$0-params;
+#X obj 287 510 r \$0-boton;
+#X obj 269 161 oss/midi-cc 1 0 1;
+#X obj 270 196 oss/midi-cc 2 0 1;
+#X obj 181 262 oss/midi-cc 3 0 1;
+#X obj 102 71 ctlin 9 0;
+#X obj 102 94 > 0;
+#X obj 102 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 121 115 s \$0-boton;
+#X obj 268 327 oss/midi-cc 4 0 1;
+#X msg 330 584 240;
+#X obj 330 557 metro 250;
+#X obj 266 392 oss/midi-cc 5 0 1;
+#X obj 650 156 oss/midi-cc 6 0 3;
+#X obj 667 193 oss/midi-cc 7 0 3;
+#X obj 642 261 oss/midi-cc 8 0 3;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 5 0 41 0;
+#X connect 7 0 41 0;
+#X connect 8 0 41 0;
+#X connect 11 0 39 0;
+#X connect 12 0 52 0;
+#X connect 14 0 41 0;
+#X connect 15 0 41 0;
+#X connect 17 0 39 0;
+#X connect 18 0 20 0;
+#X connect 20 0 39 0;
+#X connect 22 0 48 0;
+#X connect 27 0 35 0;
+#X connect 28 0 36 0;
+#X connect 33 0 39 0;
+#X connect 34 0 39 0;
+#X connect 35 0 39 0;
+#X connect 36 0 39 0;
+#X connect 38 0 39 0;
 #X connect 40 0 2 2;
-#X connect 42 0 2 2;
-#X coords 0 -1 1 1 533 800 2 0 0;
+#X connect 42 0 2 0;
+#X connect 43 0 33 0;
+#X connect 44 0 34 0;
+#X connect 45 0 17 0;
+#X connect 46 0 47 0;
+#X connect 47 0 48 0;
+#X connect 48 0 49 0;
+#X connect 50 0 38 0;
+#X connect 51 0 2 1;
+#X connect 52 0 51 0;
+#X connect 52 0 37 0;
+#X connect 53 0 11 0;
+#X connect 54 0 7 0;
+#X connect 55 0 8 0;
+#X connect 56 0 5 0;
+#X coords 0 -1 1 1 833 500 2 0 0;
 #X restore 17 18 pd mikro-synth.gui;

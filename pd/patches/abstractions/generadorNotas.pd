@@ -1,4 +1,4 @@
-#N canvas 12 22 1264 723 10;
+#N canvas 305 36 920 707 10;
 #X obj 31 37 inlet boton;
 #X obj 556 355 inlet parametros;
 #X obj 317 645 outlet frecuencia;
@@ -129,7 +129,7 @@ nota cambia;
 #X text 387 35 NOTAS MIDI;
 #X text 674 41 NOTAS FREQ;
 #X obj 759 145 == 1;
-#N canvas 342 288 448 509 modo-freq 1;
+#N canvas 342 288 448 509 modo-freq 0;
 #X obj 53 31 inlet nota;
 #X obj 245 28 inlet octava;
 #X obj 53 282 +;
