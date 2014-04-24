@@ -9,7 +9,7 @@
 #X obj 536 700 mikro-synth.dsp;
 #X obj 536 497 notein;
 #X obj 536 523 pack f f;
-#X obj 536 733 dac~;
+#X obj 543 748 dac~;
 #X obj 48 559 cnv 15 330 60 empty empty Filtro 20 12 0 14 -233017 -66577
 0;
 #X obj 68 582 oss/slider 20 10000 3 10000 filtro freq;

@@ -1,4 +1,4 @@
-#N canvas 0 0 1366 686 10;
+#N canvas 420 45 1366 686 10;
 #X obj 533 49 inlet midi;
 #X obj 219 677 outlet midi;
 #X obj 894 73 int;
@@ -44,7 +44,7 @@
 #X obj 188 452 + 6;
 #X obj 157 452 + 7;
 #X msg 142 191 bang;
-#X obj 89 531 r \$0-seventh;
+#X obj 15 409 r \$0-seventh;
 #X obj 35 550 mux 1 2;
 #X obj 219 603 tabread \$0-escala;
 #X obj 157 405 t f f f f f;
@@ -88,6 +88,8 @@ grado.;
 #X text 1025 160 3 El asunto de reset es para no dejar notas on en
 caso de que llegue un noteon a la entrada sin que llegue antes un noteoff
 ;
+#X obj 26 463 f;
+#X obj 17 433 t b f;
 #X connect 0 0 3 0;
 #X connect 2 0 78 0;
 #X connect 3 0 21 0;
@@ -148,8 +150,9 @@ caso de que llegue un noteon a la entrada sin que llegue antes un noteoff
 #X connect 41 0 55 0;
 #X connect 42 0 46 1;
 #X connect 43 0 46 0;
+#X connect 43 0 84 1;
 #X connect 44 0 77 0;
-#X connect 45 0 46 2;
+#X connect 45 0 85 0;
 #X connect 46 0 72 0;
 #X connect 47 0 49 0;
 #X connect 48 0 43 0;
@@ -193,3 +196,6 @@ caso de que llegue un noteon a la entrada sin que llegue antes un noteoff
 #X connect 79 0 53 0;
 #X connect 79 0 54 0;
 #X connect 81 0 82 0;
+#X connect 84 0 46 0;
+#X connect 85 0 84 0;
+#X connect 85 1 46 2;
