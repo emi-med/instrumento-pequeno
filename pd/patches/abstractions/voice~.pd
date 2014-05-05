@@ -1,4 +1,4 @@
-#N canvas 427 177 792 530 10;
+#N canvas 683 0 667 670 10;
 #X obj 68 40 inlet midi;
 #X obj 68 333 outlet~;
 #X obj 68 231 oscilador~;
@@ -15,6 +15,14 @@
 #X obj 332 41 inlet envolvente;
 #X msg 474 155 10;
 #X msg 357 155 0.8;
+#X obj 617 38 inlet parameters;
+#X obj 743 108 s \$0-mod-nota;
+#X obj 618 77 route segundo-nivel mod-nota;
+#X obj 619 110 s \$0-segundo-nivel;
+#X obj 169 102 r \$0-mod-nota;
+#X msg 170 134 modo-nota \$1;
+#X obj 174 161 r \$0-segundo-nivel;
+#X obj 172 187 route modofrecuencia;
 #X connect 0 0 3 0;
 #X connect 0 0 2 0;
 #X connect 2 0 11 0;
@@ -30,3 +38,11 @@
 #X connect 13 0 3 1;
 #X connect 14 0 7 0;
 #X connect 15 0 10 0;
+#X connect 16 0 18 0;
+#X connect 18 0 19 0;
+#X connect 18 1 17 0;
+#X connect 20 0 21 0;
+#X connect 21 0 2 1;
+#X connect 22 0 23 0;
+#X connect 22 0 2 1;
+#X connect 23 0 3 0;
