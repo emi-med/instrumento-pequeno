@@ -1,9 +1,9 @@
-#N canvas 0 22 882 549 10;
+#N canvas 72 139 882 549 10;
 #X declare -path abstractions;
 #X declare -path ../vendors/oss;
 #X declare -path ../vendors/rjlib;
 #X declare -lib cyclone;
-#N canvas 50 22 1071 756 mikro-synth.gui 1;
+#N canvas 0 88 1280 712 mikro-synth.gui 1;
 #X obj 629 11 declare -path abstractions;
 #X obj 629 33 declare -path ../vendors/oss;
 #X obj 287 639 mikro-synth.dsp;
@@ -29,7 +29,7 @@
 -66577 0;
 #X obj 68 283 oss/slider 0 7 1 0 armonizador grado;
 #X obj 343 264 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 289 263 Septimas;
 #X msg 1 542 armonizador seventh \$1;
 #X obj 48 325 cnv 15 330 60 empty empty Arpegiador 20 12 0 14 -233017
@@ -124,7 +124,7 @@ DE LA PANTALLA!!!!!!!!!!!!!!;
 #X obj 266 392 oss/midi-cc 5 0 1;
 #X obj 650 156 oss/midi-cc 6 0 3;
 #X obj 667 193 oss/midi-cc 7 0 3;
-#X obj 642 261 oss/midi-cc 8 0 3;
+#X obj 646 264 oss/midi-cc 8 0 3;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;
 #X connect 5 0 41 0;
