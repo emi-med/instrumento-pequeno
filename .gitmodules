@@ -4,3 +4,6 @@
 [submodule "pd/vendors/rjlib"]
 	path = pd/vendors/rjlib
 	url = https://github.com/rjdj/rjlib.git
+[submodule "pd/vendors/pd-bbb-gpio"]
+	path = pd/vendors/pd-bbb-gpio
+	url = https://github.com/rvega/pd-bbb-gpio.git
